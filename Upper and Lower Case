@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  string word;
+  cout << "Give me word. ";
+  cin >> word;
+  for (int i = 0;i < word.length();i++) { //iterates through for upper
+    char letter = toupper(word[i]);
+    cout << letter;  
+  } 
+  cout << "\n";  //gives break between words
+  for (int i = 0;i < word.length();i++) { //iterates through for lower
+    char letter = tolower(word[i]);
+    cout << letter;  
+  }
+  return 0;
+}
