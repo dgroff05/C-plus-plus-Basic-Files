@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+#include <fstream>
+using namespace std;
+
+int main() {
+  //read files and store data in variables / make variables
+  ifstream textfile("big.txt");
+  string textnums;//holds string form of numbers
+  getline(textfile,textnums); //stores numbers in textnums variable
+  vector<long>numlist; //going to store converted numbers
+  string tempNum; //temporarily stores the num during conversion
+  int lowestindex;//stores where the lowest num is
+  int lowest; //stores lowest num
+  
+  //turn files into lists by checking numbers and spaces
+  for (int i=0;i < textnums.length();i++) {
+    if (!isspace(textnums[i])) {
+      tempNum += textnums[i]; //temp var to hold numbers
+    }else{
+      numlist.push_back(stoi(tempNum)); //adds number to list
+      tempNum = ""; //resets variable
+    }
+  } 
+  //find smallest in list
+  while (numlist.size() != 0) {
+    lowest = numlist[0]; //stores lowest number
+    for (int i =0;i<numlist.size();i++) {
+      if (numlist[i] <= lowest) {
+        lowest = numlist[i]; //stores the new lowest num
+        lowestindex = i; //stores where lowest num is so it can be deleted
+      }
+    }
+    cout << lowest << ", "; //prints the lowest num
+    numlist.erase(numlist.begin()+lowestindex); //deletes lowest from list
+  }
+
+  return 0;
+}
