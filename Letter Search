@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  string word;
+  char letter;
+  cout << "Give me a word. ";
+  cin >> word;
+  cout << "Give me a letter to search for. ";
+  cin >> letter;
+
+  for (int i = 0; i < word.length(); i++) {
+    if (word[i] == letter) {
+      cout << i <<",";
+    }
+  }
+  return 0;
+}
