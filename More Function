@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+//the code here is correct but this file does not run for some reason
+
+
+int main(int argc, char* argv[]) {
+
+  string line; //Stores each line of the text file
+  int numLines = 0; //Stores total num of lines in text file
+  int lineCount = 0; //Stores the current number of lines that has been displayed
+
+  //1. Opens file the user chose
+  ifstream file;
+  file.open(argv[1]);
+
+  //Determines the number of lines the text file has for later
+  while(getline(file,line)){
+    numLines++;
+  }
+  
+  //Scrolls to next line when  user presses enter
+  //Ends program when line count reaches the total of lines (AKA when while loop is false)
+  //doesn't work in replit
+  while(lineCount < numLines){
+    getline(file,line); //stores text in line var
+    cout << line; //prints all lines
+    cin.ignore(); //deletes top line when enter is hit
+    lineCount++; //counts num of lines printed
+  }
+  return 0;
+}
