@@ -1,0 +1,25 @@
+#include <iostream>
+#include "rainbow.hpp" //link to library - https://github.com/mdk97/Rainbow?scrlybrkr=c0ff16ac
+
+using namespace std;
+
+int main() {
+  //makes picture of burger using background color of spaces and color of letters with colors
+  //library sadly had limited colors
+  
+  cout << "\n\tORDER UP!\n\n";
+  cout << "  "; // adds buffer before color starts
+  print_colored("  0    0    0    0    0  \n", WHITE, 
+BG_YELLOW); //prints top of top bun  
+  print_colored("  0    0    0    0    0   0  \n", WHITE, BG_YELLOW); //prints bottom of top bun
+
+  cout << "  "; // adds buffer before color starts
+  print_colored("                         \n", GREEN,BG_GREEN); //prints lettuce
+  
+  cout << "  "; // adds buffer before color starts
+  print_colored("                         \n", RED, BG_RED); //prints red burger
+  
+  print_colored("                             \n", YELLOW, BG_YELLOW); //prints bun
+
+  return 0;
+}
