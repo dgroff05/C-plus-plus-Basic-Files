@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int factorial(int num) {
+  if (num > 1) {
+    return num * factorial(num-1); //multiplies num by 1 lower than it until it is no longer possible
+  } else {
+    return 1;
+  }
+}
+
+int main() {
+  int num;
+  cout << "Give me a psotive number.  "; //gets factorial number from user
+  cin >> num;
+  cout << "The factorial of " <<num<< " is " <<factorial(num);
+  
+  return 0;
+}
