@@ -1,0 +1,88 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void helloWorld() { //hello world function
+  cout << "Hello World!";
+} 
+void helloName() { //says hello to a name
+  string name;
+  cout << "What's your name? ";
+  cin >> name;
+  cout << "Hello " << name << "!";
+}
+void Maths() { // the maths function
+  int x,y;
+  cout << "Give a number. ";
+  cin >> x;
+  cout << "Give another number. ";
+  cin >> y;
+  cout << x+y << '\n';
+  cout << x-y << '\n';
+  cout << x*y << '\n';
+  cout << x/y << '\n';
+  cout << pow (x,y) << '\n';
+  cout << x%y << '\n';
+}
+void Password() { //3 guess password function
+  string password = "JadenHardy#1"; //password
+    for (int i=0; i < 3;i++) {
+      string guess; //variable for user input
+      cout << "What is the password? "; //asks input
+      cin >> guess;
+      if (guess == password) { //checks password 
+        cout << "Welcome! ";
+        break;
+      } else {
+        cout << "Incorrect! \n";
+      }
+    } 
+}
+void search() { //searches a word for a certain letter
+  string word;
+  char letter;
+  cout << "Give me a word. ";
+  cin >> word;
+  cout << "Give me a letter to search for. ";
+  cin >> letter;
+
+  for (int i = 0; i < word.length(); i++) {
+    if (word[i] == letter) {
+      cout << i <<",";
+    }
+  }
+}
+void UpLow() { //turns a word into upper and lower case
+  string word;
+  cout << "Give me word. ";
+  cin >> word;
+  for (int i = 0;i < word.length();i++) { //iterates through for upper
+    char letter = toupper(word[i]);
+    cout << letter;  
+  } 
+  cout << "\n";  //gives break between words
+  for (int i = 0;i < word.length();i++) { //iterates through for lower
+    char letter = tolower(word[i]);
+    cout << letter;  
+  }
+}
+int main() {
+  int choice;
+  cout << "Choose your program: \n";
+  cout << "1. Hello World \n2. Hello Name \n3. Maths \n4. Password \n5. Search \n6. Upper and Lower Case \n";
+  cin >> choice; //stores user choice
+  if (choice == 1) {
+    helloWorld();
+  } else if (choice == 2) {
+    helloName();
+  } else if (choice == 3) {
+    Maths();
+  } else if (choice == 4) {
+    Password();
+  } else if (choice == 5) {
+    search();
+  } else if (choice == 6){
+    UpLow();
+  }
+  return 0;
+}
